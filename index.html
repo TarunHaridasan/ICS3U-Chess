@@ -1,0 +1,116 @@
+<!-- 
+	Tarun, Dhruv, Jack
+	2020-06-14
+	index.html of game
+	This document contains the HTML for the final product
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chess</title>
+		<!-- Styles.css -->
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<!-- JQuery UI CSS -->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<!-- Lodash -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.js"></script> 
+		<!-- JQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<!-- JQuery UI -->
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+		<!-- Code.js -->
+		<script type="text/javascript" src="code.js"></script>
+	</head>
+	<body>
+		<div id="game">
+			<div id="homeScreen">
+				<h1>Chess</h1>
+				<br><br><br>
+				<div id="name">
+					<h2> 
+						Name:
+						<input style="height: 40px; position: relative; font-size: 1em;" type="text" id="txtName">						
+					</h2>
+				</div>
+				<br><br><br>
+				<div id="difficulty">
+					<h2>
+						Difficulty:
+						<select id="selDifficulty">
+							<option value="1">Easy</option>
+							<option value="2">Medium</option>
+							<option value="3">Hard</option>
+						</select>
+					</h2>
+				</div>
+				<br><br><br>
+				<div id="allowHighlight">
+					<h2 style="display: inline-block; margin-right: 1%;">Move Assist:</h2>
+					<!-- Rounded switch -->
+					<label class="switch">
+				  		<input type="checkbox" id="sliderBox">
+				 		<span class="slider round"></span>
+					</label>
+				</div>			
+				<div id="buttons">
+					<br><br><br><br>
+					<button id="btnPlay">Play!</button>
+					<button id="btnHelp">Help?</button>
+				</div>				
+			</div>
+			<div id="gameScreen" style="display: none;">
+				<canvas id="chessBoard" width="800" height="800" style="border:1px solid #000000;"></canvas>				
+				<div class="grave">
+					<div id="blackGrave">
+						<h2>Black's Captured Pieces</h2>
+					</div>
+					<div id="whiteGrave">
+						<h2>White Captured Pieces</h2>
+					</div>
+				</div>
+				<div id="dialog" title="Pawn Promotion" style="display: none;"> <!--Hidden temporarily -->
+					<p>
+						Select the piece you would like to promote the pawn to:
+						<select id="selPromote">
+							<option value="Q">Queen</option>
+							<option value="R">Rook</option>
+							<option value="B">Bishop</option>
+							<option value="K">Knight</option>
+						</select>
+					</p>
+				</div>
+				<div id="gameOver" title="Game Over!" style="display: none;">
+					<p></p>
+				</div>
+			</div>
+			<div id="endScreen">
+				<div id="status">
+				</div>
+				<div id="scores">
+					<h2 style="color: black;">Games Played:</h2>
+					<table id="tblGamesPlayed">
+						<tr>
+							<th id="movesHeader">Moves</th>
+							<th id="winOrLoseHeader">Won or Lost</th>
+							<th id="dateHeader">Date</th>
+						</tr>					
+					</table>
+				</div>
+				<div id="allMoves">
+					<h2 style="color:black;">Move Transcript</h2>
+					<table id="tblTranscript">
+						<tr>
+							<th style="width: 15%;">Move #</th>
+							<th>Piece Moved</th>
+							<th>From (x,y)</th>
+							<th>To (x,y)</th>
+						</tr>						
+					</table>
+				</div>
+				<br>
+				<button id="btnPlayAgain">Play Again?</button>
+			</div>
+		</div>
+		
+	</body>
+</html>
